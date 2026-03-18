@@ -20,7 +20,7 @@ async def on_message(message):
     if "code" in msg or "link" in msg:
         embed = discord.Embed(
             title="Server Code",
-            description="Code: `d5aucw7g`\n\nPowered by SRP | SERIOUS ROLEPLAY",
+            description="Code: `yd5bq4tu`\n\nPowered by SRP | SERIOUS ROLEPLAY",
             color=discord.Color.green()
         )
         await message.channel.send(embed=embed)
