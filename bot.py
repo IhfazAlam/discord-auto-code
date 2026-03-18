@@ -1,4 +1,5 @@
 import discord
+from discord.ui import View, Button
 import os
 
 intents = discord.Intents.default()
@@ -12,17 +13,29 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    if message.author == client.user:
+    if message.author.bot:
         return
 
     msg = message.content.lower()
-
     if "code" in msg or "link" in msg:
+
+        # Embed
         embed = discord.Embed(
-            title="Server Code",
-            description="Code: `yd5bq4tu`\n\nPowered by SRP | SERIOUS ROLEPLAY",
-            color=discord.Color.green()
+            title="📌 Server Code",
+            description="**Code:** `d5aucw7g`",
+            color=discord.Color.green()  # GREEN COLOR
         )
-        await message.channel.send(embed=embed)
+        embed.set_footer(text="Powered by SRP | SERIOUS ROLEPLAY")
+
+        # Button with emoji
+        view = View()
+        button = Button(
+            label="Quick Join, emoji="📎",  # ✅ Emoji before label
+            url="https://www.roblox.com/games/start?placeId=7711635737&launchData=joinCode%3Dyd5bq4tu",  # Replace with your link
+            style=discord.ButtonStyle.link
+        )
+        view.add_item(button)
+
+        await message.channel.send(embed=embed, view=view)
 
 client.run(os.getenv("TOKEN"))
