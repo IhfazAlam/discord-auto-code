@@ -3,24 +3,24 @@ from discord.ui import View, Button
 import os
 
 intents = discord.Intents.default()
-intents.message_content = True  # MUST be enabled in Dev Portal too
+intents.message_content = True  # IMPORTANT
 
 client = discord.Client(intents=intents)
 
 @client.event
 async def on_ready():
-    print(f'Logged in as {client.user}')
+    print(f'✅ Logged in as {client.user}')
 
 @client.event
 async def on_message(message):
-    # Ignore bot messages
     if message.author.bot:
         return
 
     msg = message.content.lower()
+    print(f"Message detected: {msg}")  # DEBUG
 
-    # Trigger if "code" OR "link" is ANYWHERE in message
-    if any(word in msg for word in ["code", "link"]):
+    if "code" in msg or "link" in msg:
+        print("🔥 Triggered!")  # DEBUG
 
         embed = discord.Embed(
             title="📌 Server Code",
@@ -38,6 +38,6 @@ async def on_message(message):
         )
         view.add_item(button)
 
-        await message.channel.send(embed=embed, view=view)
+        await message.reply(embed=embed, view=view)
 
-client.run(os.getenv("TOKEN"))
+client.run("YOUR_BOT_TOKEN")
