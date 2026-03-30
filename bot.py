@@ -3,7 +3,7 @@ from discord.ui import View, Button
 import os
 
 intents = discord.Intents.default()
-intents.message_content = True
+intents.message_content = True  # MUST be enabled in Dev Portal too
 
 client = discord.Client(intents=intents)
 
@@ -13,25 +13,26 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
+    # Ignore bot messages
     if message.author.bot:
         return
 
     msg = message.content.lower()
-    if "code" in msg or "link" in msg:
 
-        # Embed
+    # Trigger if "code" OR "link" is ANYWHERE in message
+    if any(word in msg for word in ["code", "link"]):
+
         embed = discord.Embed(
             title="📌 Server Code",
-            description="**Code:** `d5aucw7g`",
-            color=discord.Color.green()  # GREEN COLOR
+            description="**Code:** `dqqaph8z`",
+            color=discord.Color.green()
         )
         embed.set_footer(text="Powered by SRP | SERIOUS ROLEPLAY")
 
-        # Button with emoji
         view = View()
         button = Button(
             label="Quick Join",
-            url="https://www.roblox.com/games/start?placeId=7711635737&launchData=joinCode%3Dyd5bq4tu",  # Replace with your link
+            url="https://www.roblox.com/games/start?placeId=7711635737&launchData=joinCode%3Ddqqaph8z",
             style=discord.ButtonStyle.link,
             emoji="🔗"
         )
