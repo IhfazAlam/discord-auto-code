@@ -40,4 +40,4 @@ async def on_message(message):
 
         await message.reply(embed=embed, view=view)
 
-client.run("YOUR_BOT_TOKEN")
+client.run("TOKEN")
