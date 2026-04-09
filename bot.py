@@ -24,7 +24,7 @@ async def on_message(message):
 
         embed = discord.Embed(
             title="📌 Server Code",
-            description="**Code:** `dqqaph8z`",
+            description="**Code:** `auqnxury`",
             color=discord.Color.green()
         )
         embed.set_footer(text="Powered by SRP | SERIOUS ROLEPLAY")
@@ -32,7 +32,7 @@ async def on_message(message):
         view = View()
         button = Button(
             label="Quick Join",
-            url="https://www.roblox.com/games/start?placeId=7711635737&launchData=joinCode%3Ddqqaph8z",
+            url="https://www.roblox.com/games/start?placeId=7711635737&launchData=joinCode%3Dauqnxury",
             style=discord.ButtonStyle.link,
             emoji="🔗"
         )
