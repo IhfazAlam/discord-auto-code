@@ -32,7 +32,7 @@ async def on_message(message):
         view = View()
         button = Button(
             label="Quick Join",
-            url="https://www.roblox.com/games/start?placeId=7711635737&launchData=joinCode%3Dx5xmd3ww",
+            url="https://www.roblox.com/games/start?placeId=7711635737&launchData=joinCode%3Dm3c7iwz8",
             style=discord.ButtonStyle.link,
             emoji="🔗"
         )
