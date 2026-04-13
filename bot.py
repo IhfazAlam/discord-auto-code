@@ -24,7 +24,7 @@ async def on_message(message):
 
         embed = discord.Embed(
             title="📌 Server Code",
-            description="**Code:** `x5xmd3ww`",
+            description="**Code:** `m3c7iwz8`",
             color=discord.Color.green()
         )
         embed.set_footer(text="Powered by SRP | SERIOUS ROLEPLAY")
